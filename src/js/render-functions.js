@@ -3,13 +3,13 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-
-function displayImg (images) {
+function displayImg(images) {
   const galleryContainer = document.querySelector(".image-container");
 
-
+ 
   images.forEach((image) => {
     const imageCard = document.createElement("li");
+   
     imageCard.classList.add("image-card");
 
     const imageUrl = image.webformatURL;
@@ -41,10 +41,8 @@ const imageDownloads = image.downloads;
      <p class="card-text">${imageDownloads}</p>
      </li>
      </ul>
+     
     `;
-
-
-
 
     galleryContainer.appendChild(imageCard);
   });
@@ -52,6 +50,8 @@ const imageDownloads = image.downloads;
 
   const lightbox = new SimpleLightbox(".image-card a");
   lightbox.refresh();
+
+
 }
 
 

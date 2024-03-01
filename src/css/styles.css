@@ -56,6 +56,7 @@
   margin-left: auto;
   max-width: 1128px;
   padding-left: 0;
+  margin-bottom: 32px;
 }
 
 
@@ -136,4 +137,19 @@
   100% {
     box-shadow: 0 0 0 10px inset
   }
+}
+.load-more-btn {
+  border-radius: 8px;
+  background: #4E75FF;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .04em;
+  padding: 8px 16px;
+  height: 40px;
+  border: none;
+  width: 125px;
+  margin-right: auto;
+  margin-left: auto;
 }

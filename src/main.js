@@ -3,8 +3,9 @@ import iziToast from "izitoast";
 // Додатковий імпорт стилів
 import "izitoast/dist/css/iziToast.min.css";
 import { getImages } from "./js/pixabay-api.js";
-import { displayImg } from "./js/render-functions";
+import {displayImg } from "./js/render-functions";
 import { loadMoreBtn } from "./js/pixabay-api.js";
+
 
 const searchForm = document.querySelector(".form-search");
 const inputForm = document.querySelector(".form-input");
@@ -54,35 +55,27 @@ function loadMoreImages(event) {
 getImages(currentQuery, pageCurrent, 15)
     .then(data => {
    
-displayImg(data.hits);
-                
-   scrollNewImage();             
-    })
+      displayImg(data.hits);
+       scrollNewImage(); 
+     })            
+              
+   
     .catch(error => {
       console.error(error);
     });
 }
 
-function getGalleryCardHeight() {
-  const galleryCard = document.querySelector(".image-card");
-
-  if (galleryCard) {
-    let cardHeight = galleryCard.getBoundingClientRect().height;
-    return cardHeight;
-  }
-
-}
 
 function scrollNewImage() {
-  const cardHeight = getGalleryCardHeight();
-
-  if (cardHeight) {
-    
-    window.scrollBy({
-       top: (cardHeight * 2), 
-      behavior: 'smooth',
+  const cardHeight = document.querySelector(".image-card").getBoundingClientRect().height;
+  
+  const scrollHight = cardHeight * 2;
+ 
+window.scrollBy({
+       top: scrollHight, 
+      behavior: "smooth"
     });
-  }
+  
 }
 
 
